@@ -1,25 +1,25 @@
 /**
  * 1. A fájlok kezeléséhez az fs modul promise alapú verzióját használd.
  */
- const { readFile, writeFile } = require('fs').promises;
+const { readFile, writeFile } = require('fs').promises;
 
 /**
  * 2. Állítsd be az azonos mappában található .json fájl elérési útját a path 
  * modul join metódusának segítségével.
  */
- const { join } = require('path');
+const { join } = require('path');
 
- const jsonPath = join(__dirname, 'db', 'products.json');
+const jsonPath = join(__dirname, 'db', 'products.json');
 
  /**
   * 3. A jsonPath útvonalon található fájl tartalmát beolvassa és értelmezi, 
   * majd visszaadja a kapott tömböt.
   * @returns objektumok tömbje
   */
- const getList = async () => {
+const getList = async () => {
     const fileContent = await readFile(jsonPath, { encoding: 'utf8' });
     return JSON.parse(fileContent);
- };
+};
 
 /**
  * 4. A kapott tömböt json formátumra alakítja és beleírja a jsonPath útvonalon 

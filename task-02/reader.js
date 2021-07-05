@@ -18,7 +18,7 @@ const jsonPath = join(__dirname, 'db', 'users.json');
  */
  const getList = async () => {
     const fileContent = await readFile(jsonPath, { encoding: 'utf8' });
-    return JSON.parse(fileContent)
+    return JSON.parse(fileContent);
 };
 
 /**
